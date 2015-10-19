@@ -41,6 +41,8 @@ When `<magic>` won't be able to match your keywords appropriately, it'll return 
 
 * Get basic blog functional and come up with sexy web design (Ishbir, Raunkar, Anubhav)
 * Make `<magic></magic>` Markdown plugin (Radhika)
+* Get comments working
+* Make custom admin panel for authors
 
 # Instructions
 
