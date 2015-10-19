@@ -20,11 +20,12 @@ class Category(models.Model):
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
-# This custom QuerySet subclasses the regular QuerySet to provide
-# an extra method called published()
+
 class PostQuerySet(models.QuerySet):
     def published(self):
         return self.filter(published=True)
+# This custom QuerySet subclasses the regular QuerySet to provide
+# an extra method called published()
 
 
 class Post(models.Model):
@@ -44,6 +45,9 @@ class Post(models.Model):
 
     published = models.BooleanField(default=True)
     objects = PostQuerySet.as_manager()
+    # We set PostQuerySet as the default QuerySet manager for the Post model.
+    # We set it as objects, because we always tend to call Post.objects.whatever(some params)
+    # to create a QuerySet.
 
     def save(self):
         self.text_html = markdown2.markdown(self.text, extras=['fenced-code-blocks'])
