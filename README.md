@@ -1,7 +1,7 @@
 # blag
 Systems Management 2015-16 Web Design Project.
 
-Credits to [this repo](https://github.com/arocks/qblog) for the basic design of the blog. Thanks!
+Credits to [this repo](https://github.com/arocks/qblog) and [this post](http://trevore.com/post/building-blog-django-17-and-python-34) for the basic version of the blog. Thanks!
 
 This is a blogging platform with a bit of twist. It's been optimized for... memes and other similar cool stuff!
 It's also a regular blogging platform. Obviously.
