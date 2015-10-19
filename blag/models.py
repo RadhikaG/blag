@@ -12,14 +12,15 @@ class Category(models.Model):
     def __unicode__(self):
         return '%s' % self.title
 
-    def get_absolute_url(self):
-        return reverse("category_index", kwargs={"slug": self.slug})
+    # def get_absolute_url(self):
+        # return reverse("category_index", kwargs={"slug": self.slug})
     
     class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
-
+# This custom QuerySet subclasses the regular QuerySet to provide
+# an extra method called published()
 class PostQuerySet(models.QuerySet):
     def published(self):
         return self.filter(published=True)

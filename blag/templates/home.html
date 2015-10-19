@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block title %}
+    Blag | Home
+{% endblock %}
+
+{% block blog_posts %}
+
+{% for object in object_list %}
+    <div class="post">
+        <h2><a href="{% url "post_detail" slug=object.slug %}">{{ object.title }}</a></h2>
+        <p class="meta">
+            {{ object.created }} |
+            Tagged under {{object.categories.all|join:", " }}
+        </p>
+    </div>
+{% endfor %}
+
+{% endblock %}
