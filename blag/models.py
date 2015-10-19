@@ -2,6 +2,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+import markdown2
 # Create your models here.
 
 
@@ -45,7 +46,7 @@ class Post(models.Model):
     objects = PostQuerySet.as_manager()
 
     def save(self):
-        self.body_html = markdown2.markdown(self.body, extras=['fenced-code-blocks'])
+        self.text_html = markdown2.markdown(self.text, extras=['fenced-code-blocks'])
         super(Post, self).save()
 
     def __str__(self):
