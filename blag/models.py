@@ -9,7 +9,7 @@ class Category(models.Model):
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s' % self.title
 
     # def get_absolute_url(self):
@@ -48,7 +48,7 @@ class Post(models.Model):
         self.body_html = markdown2.markdown(self.body, extras=['fenced-code-blocks'])
         super(Post, self).save()
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s' % self.title
    
     def get_absolute_url(self):
@@ -56,7 +56,7 @@ class Post(models.Model):
     # This returns a URL calculated from the urls.py file, using
     # the unique slug.
     # Example:
-    # Response from __unicode__: My first post
+    # Response from __str__: My first post
     # Response from get_absolute_url: /blag/view/my-first-post.html
 
     class Meta:
@@ -73,7 +73,7 @@ class Comment(models.Model):
     post = models.ForeignKey(Post)
     created_on = models.DateTimeField(auto_now_add=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s' % self.text
 
     class Meta:

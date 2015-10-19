@@ -44,10 +44,11 @@ When `<magic>` won't be able to match your keywords appropriately, it'll return 
 
 # Instructions
 
-* Make a virtualenv for Python3, install Django in it. Activate it.
+* Make a virtualenv for Python3. Activate it.
 * Finish the Django tutorial from the Django docs before you start anything at all.
-* Read up on Git and GitHub. You should be comfortable with cloning, pushing, and branching your repo.
+* Read up on Git and GitHub. You should be comfortable with cloning, committing, pushing, and branching.
 * `git clone https://github.com/RadhikaG/blag.git` into your working directory.
+* After making sure you're in your virtualenv, do `pip install -r requirements.txt`. This will install all the Python libraries and modules you need for this project.
 * `python manage.py migrate`
 * `python manage.py makemigrations blag`
 * Replace `<your name>` with your name without the angled brackets: `git branch <your name>`. For example, `git branch radhika`.
