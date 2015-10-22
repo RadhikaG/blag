@@ -2,7 +2,8 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
-import markdown2
+# import markdown2
+import markdown
 # Create your models here.
 
 
@@ -50,7 +51,8 @@ class Post(models.Model):
     # to create a QuerySet.
 
     def save(self):
-        self.text_html = markdown2.markdown(self.text, extras=['fenced-code-blocks'])
+        # self.text_html = markdown2.markdown(self.text, extras=['fenced-code-blocks'])
+        self.text_html = markdown.markdown(self.text, extensions=['markdown.extensions.extra', 'magic'])
         super(Post, self).save()
 
     def __str__(self):

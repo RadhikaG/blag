@@ -39,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django_markdown',
-    'markdown2',
+    'markdown',
+    # 'markdown2',
     'blag',
 )
 
