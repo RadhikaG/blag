@@ -11,8 +11,11 @@
     <div class="post">
         <h2><a href="{% url "post_detail" slug=object.slug %}">{{ object.title }}</a></h2>
         <p class="meta">
-            {{ object.created }} |
-            Tagged under {{object.categories.all|join:", " }}
+            {{ object.created_on }} |
+            tagged under 
+            {% for category in object.categories.all %}
+                <a class="post-category post-category-js" href="{% url "category_index" slug=category.slug %}">{{ category }}</a>
+            {% endfor %}
         </p>
     </div>
 {% endfor %}

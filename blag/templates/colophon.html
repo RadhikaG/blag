@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Blag | Colophon
+{% endblock %}
+
+{% block blog_posts %}
+
+    <div class="post">
+        <h2>Colophon</h2>
+
+        <p>Blag uses <a href="https://www.djangoproject.com/">Django</a>
+        in the backend, and Bootstrap, CSS, and HTML in the frontend. 
+        The database used during development was Sqlite3. All posts are written 
+        in Markdown, giving the author the power and flexibility to format 
+        their posts as they wish.<p>
+
+        <p>Oh, and the name 'Blag' is inspired by <a href="http://xkcd.com">xkcd</a>.</p>
+
+        <p>The &#91;magic&#93; markdown extension is written in Python.</p>
+
+        <p>All our code is available in the public domain on GitHub.
+        Yay for open source!</p>
+        
+        <p><a href="https://github.com/RadhikaG/blag">Blag on GitHub.</a></p>
+        <p><a href="https://github.com/RadhikaG/markdown-magic">Markdown-magic on GitHub.</a></p>
+
+    </div>
+    
+{% endblock %}

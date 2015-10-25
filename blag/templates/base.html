@@ -32,7 +32,7 @@
             <div class="container">
                 <nav class="blog-nav">
                     <a class="blog-nav-item active" href="{% url "index" %}">Home</a>
-                    <a class="blog-nav-item" href="#">About</a>
+                    <a class="blog-nav-item" href="{% url "colophon" %}">Colophon</a>
                     <a class="blog-nav-item" href="/admin">Admin</a>
                     <a class="blog-nav-item" href="{% url "registration" %}">Register</a>
                 </nav>
@@ -63,14 +63,14 @@
                 <div class="sidebar-module sidebar-module-inset">
                     <h4>About</h4>
                     <p>In most blogging platforms, if you want to include a popular meme or an xkcd comic, you normally have to search for it separately and paste the URL in the image box, or go to a meme generator, make the meme, download it, upload it... well you get the idea.<p>
-                    <p>Blag changes all this! In our custom flavour of Markdown, we have a snazzy new tag called &lt;magic&gt;. This tag will try and best fit anything between &lt;magic&gt; and &lt;/magic&gt; to what you want.</p>
+                    <p>Blag changes all this! In our custom flavour of Markdown, we have a snazzy new tag called &#91;magic&#93;. This tag will try and best fit anything between &#91;magic&#93; and &#91;&#92;magic&#93; to what you want.</p>
                 </div>
             </div>
 
         </div>
 
         <div class="blog-footer">
-            <p>Systems Management 2015-16 Web Design Project</p>
+            <p>Systems Management 2015-16 Web Development Project</p>
             <p>Made by <a href="https://github.com/RadhikaG">Radhika Ghosal</a>, Ishbir Walia, Raunak Sinha, and Anubhav Jain.</p>
         </div>
 

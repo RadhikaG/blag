@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% load django_markdown %}
 
+{% block title %}
+    Blag | {{ object.title }}
+{% endblock %}
+
 {% block blog_posts %}
+
     <div class="post">
         <h2><a href="{% url "post_detail" slug=object.slug %}">{{ object.title }}</a></h2>
         <p class="meta">
@@ -16,16 +21,17 @@
         <hr>
 
         {% if comment_list %}
-        <h2>Comments</h2>
+            <h2>Comments</h2>
         {% endif %}
+
         {% for comment in comment_list %}
-        <p class="meta">
-            {{ comment.name }}
-            on
-            {{ comment.created_on }}
-        </p>
-        <p>{{ comment.text }}</p><br>
-        <hr>
+            <p class="meta">
+                {{ comment.name }}
+                on
+                {{ comment.created_on }}
+            </p>
+            <p>{{ comment.text }}</p><br>
+            <hr>
         {% endfor %}
 
         <h2>Add a comment</h2>
@@ -36,4 +42,5 @@
         </form>
             
     </div>
+
 {% endblock %}

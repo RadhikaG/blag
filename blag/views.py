@@ -86,3 +86,7 @@ class Registration(CreateView):
         self.object.is_staff = True
         self.object.save()
         return super(ModelFormMixin, self).form_valid(form)
+
+
+def colophon(request):
+    return render(request, 'colophon.html')
