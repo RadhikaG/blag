@@ -60,7 +60,7 @@ class Post(models.Model):
         return '%s' % self.title
    
     def get_absolute_url(self):
-        return reverse("view_post", kwargs={"slug": self.slug})
+        return reverse("post_detail", kwargs={"slug": self.slug})
     # This returns a URL calculated from the urls.py file, using
     # the unique slug.
     # Example:

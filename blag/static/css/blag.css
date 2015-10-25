@@ -1,9 +1,20 @@
+@font-face {
+    font-family: 'Orange Juice';
+    src: url('/static/fonts/orange\ juice\ 2.0.ttf') format('truetype');
+}
+
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
 }
 
-h1, .h1,
+h1, .h1 {
+    margin-top: 0;
+    font-family: "Orange Juice", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color: #333;
+}
+
 h2, .h2,
 h3, .h3,
 h4, .h4,
@@ -77,8 +88,8 @@ h6, .h6 {
 }
 .blog-title {
     margin-top: 30px;
-    margin-bottom: 0;
-    font-size: 60px;
+    margin-bottom: 20px;
+    font-size: 90px;
     font-weight: normal;
 }
 .blog-description {
