@@ -2,7 +2,8 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
-# import markdown2
+from django.forms import ModelForm
+
 import markdown
 # Create your models here.
 
@@ -88,3 +89,8 @@ class Comment(models.Model):
         verbose_name_plural = "Comments"
         ordering = ["-created_on"]
 
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['name','email','website','text']

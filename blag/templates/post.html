@@ -15,7 +15,9 @@
 
         <hr>
 
+        {% if comment_list %}
         <h2>Comments</h2>
+        {% endif %}
         {% for comment in comment_list %}
         <p class="meta">
             {{ comment.name }}
@@ -25,6 +27,13 @@
         <p>{{ comment.text }}</p><br>
         <hr>
         {% endfor %}
+
+        <h2>Add a comment</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Create" />
+        </form>
             
     </div>
 {% endblock %}
