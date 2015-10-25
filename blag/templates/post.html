@@ -8,9 +8,23 @@
             {{ object.created_on }} |
             tagged under 
             {% for category in object.categories.all %}
-            <a class="post-category post-category-js" href="{% url "category_index" slug=category.slug %}">{{ category }}</a>
+                <a class="post-category post-category-js" href="{% url "category_index" slug=category.slug %}">{{ category }}</a>
             {% endfor %}
         </p>
         {{ object.text_html|safe }}
+
+        <hr>
+
+        <h2>Comments</h2>
+        {% for comment in comment_list %}
+        <p class="meta">
+            {{ comment.name }}
+            on
+            {{ comment.created_on }}
+        </p>
+        <p>{{ comment.text }}</p><br>
+        <hr>
+        {% endfor %}
+            
     </div>
 {% endblock %}
